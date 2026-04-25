@@ -15,7 +15,7 @@ const PORT = parseInt(process.env.PORT || "4000", 10);
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
+      "http://localhost:3000","https://chatgptbackend-oh5n.onrender.com",
       process.env.FRONTEND_URL,
     ].filter(Boolean),
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
