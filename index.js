@@ -25,21 +25,21 @@ const PORT = parseInt(process.env.PORT || "4000", 10);
 //   })
 // );
 
-app.use(
-  cors()
-);
-
 // app.use(
-//     cors({
-//     origin: [
-//       "http://localhost:3000","https://chat-gpt-theta-snowy.vercel.app",
-//       process.env.FRONTEND_URL,
-//     ].filter(Boolean),
-//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-//     allowedHeaders: ["Content-Type", "Authorization"],
-//     credentials: true,
-//   })
-// )
+//   cors()
+// );
+
+app.use(
+    cors({
+    origin: [
+      "http://localhost:3000","https://chat-gpt-theta-snowy.vercel.app",
+      process.env.FRONTEND_URL,
+    ].filter(Boolean),
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+)
 
 app.use(express.json({ limit: "10kb" }));
 
