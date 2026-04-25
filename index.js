@@ -12,16 +12,21 @@ const PORT = parseInt(process.env.PORT || "4000", 10);
 // ---------------------------------------------------------------------------
 // Middleware
 // ---------------------------------------------------------------------------
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:3000",
+//       "http://localhost:3001/",
+//       process.env.FRONTEND_URL,
+//     ].filter(Boolean),
+//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true,
+//   })
+// );
+
 app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      process.env.FRONTEND_URL,
-    ].filter(Boolean),
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
+  cors()
 );
 
 app.use(express.json({ limit: "10kb" }));
